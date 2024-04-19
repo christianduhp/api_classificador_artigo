@@ -19,7 +19,6 @@ murmurhash==1.0.10
 numpy==1.26.4
 packaging==24.0
 preshed==3.0.9
-pt-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/pt_core_news_sm-3.7.0/pt_core_news_sm-3.7.0-py3-none-any.whl
 pydantic==2.7.0
 pydantic_core==2.18.1
 requests==2.31.0

@@ -9,6 +9,8 @@ COPY . ./
 # Instala as dependências especificadas no arquivo requirements.txt
 RUN pip install -r requirements.txt
 
+RUN pip install https://github.com/explosion/spacy-models/releases/download/pt_core_news_sm-3.7.0/pt_core_news_sm-3.7.0-py3-none-any.whl
+
 # Expõe a porta 8080, que é a porta padrão em que o Flask é executado
 EXPOSE 8080
 
