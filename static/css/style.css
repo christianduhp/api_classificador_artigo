@@ -87,7 +87,12 @@ html, body {
     height: 100%;
 }
 
-.login {
+.categories {
+   font-size: small;
+}
+
+
+.main_card {
     width: 100%;
     max-width: 600px;
     background-color: #0C0C14;
@@ -96,14 +101,14 @@ html, body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
-.login h1 {
+.main_card h1 {
     color: #fff;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     letter-spacing: 1px;
     text-align: center;
 }
 
-.login p {
+.main_card p {
     color: #fff;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     letter-spacing: 1px;
@@ -200,12 +205,12 @@ input:focus {
 		overflow: hidden;
     }
 
-	.login h1 {
+	.main_card h1 {
 		font-size: 24px;
 		margin-bottom: 1em;
 	}
 
-    .login {
+    .main_card {
         width: 90%;
         max-width: none;
         padding: 1em; 

@@ -1,94 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <!--From https://codepen.io/frytyler/pen/EGdtg-->
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ML API</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Pacifico"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Arimo"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Hind:300"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
 
-  <body>
-    <div class="login" id="card-container">
-      <button class="flip-button">?</button>
-      <div class="card">
-        <div class="front">
-          <h1>Classificador de Artigos</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ML API</title>
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Hind:300" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
 
-          <!-- Main Input For Receiving Query to our ML -->
-          <form action="{{ url_for('predict')}}" method="post">
-            <input
-              type="text"
-              name="titulo"
-              placeholder="Digite o título do artigo. Exemplo: 'Grupo de brasileiros em Gaza cruza fronteira com o Egito' "
-              required="required"
-            />
+<body>
+  <div class="main_card" id="card-container">
+    <button class="flip-button">?</button>
+    <div class="card">
+      <div class="front">
+        <h1>Classificador de Artigos</h1>
 
-            <button type="submit" class="btn btn-primary btn-block btn-large">
-              Classificar
-            </button>
-          </form>
-
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict')}}" method="post">
+          <input type="text" name="titulo"
+            placeholder="Digite o título do artigo. Exemplo: 'Grupo de brasileiros em Gaza cruza fronteira com o Egito' "
+            required="required" />
+          <small class="categories">Categorias possíveis: Colunas, Cotidiano, Esporte, Ilustrada, Mercado, Mundo</small>
           <br />
           <br />
-          {{ title }}
-          <br />
-          <br />
-          {{ category }}
-        </div>
+          <button type="submit" class="btn btn-primary btn-block btn-large">
+            Classificar
+          </button>
+        </form>
+        <br />
+        <br />
+        {{ title }}
+        <br />
+        <br />
+        {{ category }}
+        <br />
+      </div>
 
-        <div class="back">
-          <h1>Classificador de Artigos</h1>
-          <p>
-            Este é um projeto de classificação de artigos utilizando Machine
-            Learning. Utiliza-se um modelo treinado com Word Embeddings
-            (Word2Vec) para categorizar o título de um artigo em uma determinada
-            categoria.gunicor app:app
-            <br /><br />
-            Para classificar um artigo, insira o título na caixa de texto e
-            pressione o botão "Classificar". O resultado será exibido abaixo.
-          </p>
-          <a
-            class="github_button"
-            href="https://github.com/christianduhp/christianduhp"
-          >
-            <i class="fa-brands fa-github"></i>
-            Acesse o projeto
-          </a>
-        </div>
+      <div class="back">
+        <h2>Classificador de Artigos</h2>
+        <p>
+          Este é um projeto de classificação de artigos utilizando Machine
+          Learning. Utiliza-se um modelo treinado com Word Embeddings
+          (Word2Vec) para categorizar o título de um artigo em uma determinada
+          categoria.
+          <br /><br />
+          Para classificar um artigo, insira o título na caixa de texto e
+          pressione o botão "Classificar". O resultado será exibido abaixo.
+        </p>
+        <a class="github_button" href="https://github.com/christianduhp/christianduhp">
+          <i class="fa-brands fa-github"></i>
+          Acesse o projeto
+        </a>
       </div>
     </div>
-    <script
-      src="{{ url_for('static', filename='js/script.js') }}"
-      defer
-    ></script>
-  </body>
+  </div>
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</body>
+
 </html>
